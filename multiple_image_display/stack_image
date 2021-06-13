@@ -1,0 +1,19 @@
+import cv2
+import numpy as np
+
+img1 = cv2.imread('../resources/one.jpg')
+img2 = cv2.imread('../resources/one.jpg')
+
+
+img1 = cv2.resize(img1, (0, 0), None, 0.5, 0.5)
+img2 = cv2.resize(img2, (0, 0), None, 0.5, 0.5)
+
+
+hor = np.hstack((img1, img2))
+ver = np.vstack((img1, img2))
+
+
+cv2.imshow("Hor", hor)
+cv2.imshow("Ver", ver)
+
+cv2.waitKey()
